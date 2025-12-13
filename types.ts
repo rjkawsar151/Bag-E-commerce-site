@@ -32,7 +32,7 @@ export interface CheckoutDetails {
   bkashTransactionId?: string;
 }
 
-export type ViewState = 'HOME' | 'SHOP' | 'ADMIN' | 'BLOG' | 'TRACK_ORDER' | 'LOGIN' | 'REGISTER' | 'USER_DASHBOARD';
+export type ViewState = 'HOME' | 'SHOP' | 'ADMIN' | 'BLOG' | 'TRACK_ORDER' | 'LOGIN' | 'REGISTER' | 'USER_DASHBOARD' | 'VERIFY_OTP';
 
 export type UserRole = 'SUPER_ADMIN' | 'SHOP_ADMIN' | 'CUSTOMER';
 
@@ -119,6 +119,13 @@ export interface Coupon {
     isActive: boolean;
 }
 
+export interface ProductHighlights {
+    showShipping: boolean;
+    shippingText: string;
+    showWarranty: boolean;
+    warrantyText: string;
+}
+
 export interface SiteConfig {
   headerTitle: string;
   logo: string;
@@ -135,6 +142,7 @@ export interface SiteConfig {
   topBarText: string;
   copyrightText: string;
   coupons: Coupon[];
+  productHighlights: ProductHighlights;
 }
 
 export interface AdminStats {

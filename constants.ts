@@ -211,5 +211,11 @@ export const INITIAL_SITE_CONFIG: SiteConfig = {
     coupons: [
         { code: "VELVET10", discountPercent: 10, isActive: true },
         { code: "WELCOME20", discountPercent: 20, isActive: false }
-    ]
+    ],
+    productHighlights: {
+        showShipping: true,
+        shippingText: "Free shipping on orders over ৳5000",
+        showWarranty: true,
+        warrantyText: "1 year warranty included"
+    }
 };
