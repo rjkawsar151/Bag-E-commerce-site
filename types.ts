@@ -4,6 +4,7 @@ export type Category = string;
 export interface Product {
   id: string;
   name: string;
+  slug: string;
   price: number;
   category: Category;
   description: string;
@@ -52,10 +53,17 @@ export interface SmtpConfig {
   fromEmail: string;
 }
 
+export interface DatabaseConfig {
+    supabaseUrl: string;
+    supabaseKey: string;
+}
+
 export interface CheckoutConfig {
     enableBkash: boolean;
     bkashNumber: string;
     bkashInstructions: string;
+    shippingCharge: number;
+    freeShippingThreshold: number;
 }
 
 export interface HeroSlide {
@@ -95,6 +103,7 @@ export interface USPItem {
 export interface BlogPost {
     id: string;
     title: string;
+    slug: string;
     excerpt: string;
     content: string;
     image: string;
@@ -108,6 +117,7 @@ export interface Order {
     details: CheckoutDetails;
     items: CartItem[];
     total: number;
+    shippingCost: number;
     discountApplied?: number;
     finalTotal: number;
     status: 'Pending' | 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
@@ -131,6 +141,7 @@ export interface SiteConfig {
   logo: string;
   footerText: string;
   smtp: SmtpConfig;
+  database: DatabaseConfig;
   checkout: CheckoutConfig;
   heroSlides: HeroSlide[];
   testimonials: Testimonial[];
@@ -143,6 +154,10 @@ export interface SiteConfig {
   copyrightText: string;
   coupons: Coupon[];
   productHighlights: ProductHighlights;
+  // We can include dynamic data here to be saved in the blob for simplicity
+  products?: Product[];
+  orders?: Order[];
+  users?: User[];
 }
 
 export interface AdminStats {

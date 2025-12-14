@@ -1,5 +1,5 @@
 {
-  "name": "velvet-&-vogue",
+  "name": "eesome",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,6 +12,7 @@
     "react": "^19.2.1",
     "@google/genai": "^1.32.0",
     "recharts": "2.15.0",
+    "@supabase/supabase-js": "2.39.3",
     "react-dom": "^19.2.1"
   },
   "devDependencies": {
